@@ -1,10 +1,26 @@
 const Dev = require('../models/Dev') 
 
 module.exports = {
-    store(req, res) {
-        console.log(req.params.devId);
-        console.log(req.headers.user);
-        
-        return res.json({ok: true});
+   async store(req, res) {
+        const { devId } = req.params;
+        const { user } = req.header;
+
+        const loggedDev = await Dev.findById(user);
+        const targetDev = await Dev.findById(devId);
+
+        if (!targetDev) {
+            return res.status(400).json({error: 'Dev not exist'});
+
+        }
+
+        if (targetDev.likes.includes(user)) {
+        console.log('Deu Match');
+        }
+
+        loggedDev.likes.push(targetDev._id);
+
+        await loggedDev.save();
+
+        return res.json(loggedDev);
     }
 };
