@@ -1,14 +1,15 @@
 import React from 'react';
 import './App.css';
 
-import Login from './pages/Login'
+import Routes from './routes'
 
 
 export default function App() {
   return (
-    <h1> Heloo world </h1>,
-    <Login />
+  
+    <Routes/>
+    
   );
-}
+};
 
 
