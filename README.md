@@ -1,7 +1,7 @@
 
 # Semana-Ominstack8
 
- ###### Estudos em react, utilizando insomnia, mongodb, nodejs e yarn utilizando bibliotecas de javascript:
+ ### Estudos em react, utilizando insomnia, mongodb, nodejs e yarn utilizando bibliotecas de javascript:
  - Express
  - Moongosse
  - Cors
